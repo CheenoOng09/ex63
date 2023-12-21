@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>Button with Spinner and Collapsible Item</title>
+    <style>
+        body {
+            padding: 20px;
+        }
+        .spinner-border {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="mt-4">Button with Spinner and Collapsible Item</h1>
+
+        <button id="spinnerButton" type="button" class="btn btn-primary">
+            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            <span class="ml-2">Click me</span>
+        </button>
+
+
+        <div class="mt-4">
+            <div class="collapse" id="collapsibleItem">
+                <div class="card card-body">
+                    Collapsible Item Content
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <script>
+
+        document.getElementById('spinnerButton').addEventListener('click', function () {
+            var spinner = document.querySelector('.spinner-border');
+            var collapsibleItem = document.getElementById('collapsibleItem');
+
+
+            if (spinner.style.display === 'none') {
+                spinner.style.display = 'inline-block';
+            } else {
+                spinner.style.display = 'none';
+            }
+
+            $('#collapsibleItem').collapse('toggle');
+        });
+    </script>
+
+</body>
+</html>
